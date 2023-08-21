@@ -18,11 +18,9 @@ public class WordFrequencyGame {
             return inputStr + ADD_ONE_WHEN_SPLITTED_INPUT_STR_LENGTH_IS_ONE;
         } else {
             try {
-                List<Input> inputList = Arrays.stream(inputStr.split(DELIMITER))
+                Map<String, List<Input>> stringListInputMap = Arrays.stream(inputStr.split(DELIMITER))
                         .map(input -> new Input(input, 1))
-                        .collect(Collectors.toList());
-
-                Map<String, List<Input>> stringListInputMap = getListMap(inputList);
+                        .collect(Collectors.groupingBy(Input::getInputString));
 
                 return stringListInputMap.entrySet().stream()
                         .map(entry -> new Input(entry.getKey(), entry.getValue().size()))
