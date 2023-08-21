@@ -34,9 +34,4 @@ public class WordFrequencyGame {
         }
     }
 
-    private Map<String, List<Input>> getListMap(List<Input> inputList) {
-        return inputList.stream()
-                .collect(Collectors.groupingBy(Input::getInputString));
-    }
-
 }
