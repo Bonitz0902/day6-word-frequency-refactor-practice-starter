@@ -33,7 +33,7 @@ public class WordFrequencyGame {
 
                 inputList.sort(Comparator.comparingInt(Input::getWordCount).reversed());
                 return inputList.stream()
-                        .map(input -> String.format("%s %d", input.getValue(), input.getWordCount()))
+                        .map(input -> String.format("%s %d", input.getInputString(), input.getWordCount()))
                         .collect(Collectors.joining(NEW_LINE));
 
             } catch (Exception e) {
@@ -47,7 +47,7 @@ public class WordFrequencyGame {
 
     private Map<String, List<Input>> getListMap(List<Input> inputList) {
         return inputList.stream()
-                .collect(Collectors.groupingBy(Input::getValue));
+                .collect(Collectors.groupingBy(Input::getInputString));
     }
 
 
