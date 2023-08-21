@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class WordFrequencyGame {
@@ -14,9 +17,7 @@ public class WordFrequencyGame {
         if (inputStr.split(DELIMITER).length == 1) {
             return inputStr + ADD_ONE_WHEN_SPLITTED_INPUT_STR_LENGTH_IS_ONE;
         } else {
-
             try {
-
                 List<String> listOfSplittedInputString = Arrays.stream(inputStr.split(DELIMITER))
                         .collect(Collectors.toList());
 
@@ -36,18 +37,14 @@ public class WordFrequencyGame {
                         .collect(Collectors.joining(NEW_LINE));
 
             } catch (Exception e) {
-
-
                 return CALCULATE_ERROR;
             }
         }
     }
 
-
     private Map<String, List<Input>> getListMap(List<Input> inputList) {
         return inputList.stream()
                 .collect(Collectors.groupingBy(Input::getInputString));
     }
-
 
 }
