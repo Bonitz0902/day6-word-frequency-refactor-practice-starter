@@ -3,11 +3,10 @@ import java.util.stream.Collectors;
 
 public class WordFrequencyGame {
 
-    private String DELIMITER = "\\s+";
-    private String ADD_ONE_WHEN_SPLITTED_INPUT_STR_LENGTH_IS_ONE = " 1";
-    private String SPACE_STRING = " ";
-    private String NEW_LINE = "\n";
-    private String CALCULATE_ERROR = "Calculate Error";
+    private final String DELIMITER = "\\s+";
+    private final String ADD_ONE_WHEN_SPLITTED_INPUT_STR_LENGTH_IS_ONE = " 1";
+    private final String NEW_LINE = "\n";
+    private final String CALCULATE_ERROR = "Calculate Error";
 
     public String getResult(String inputStr) {
 

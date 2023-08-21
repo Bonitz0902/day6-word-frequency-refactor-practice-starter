@@ -1,6 +1,6 @@
 public class Input {
-    private String inputString;
-    private int wordCount;
+    private final String inputString;
+    private final int wordCount;
 
     public Input(String inputString, int wordCount){
         this.inputString =inputString;
