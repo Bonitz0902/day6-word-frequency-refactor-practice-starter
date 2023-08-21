@@ -24,12 +24,9 @@ public class WordFrequencyGame {
 
                 Map<String, List<Input>> stringListInputMap = getListMap(inputList);
 
-                inputList = stringListInputMap.entrySet().stream()
+                return stringListInputMap.entrySet().stream()
                         .map(entry -> new Input(entry.getKey(), entry.getValue().size()))
                         .sorted(Comparator.comparingInt(Input::getWordCount).reversed())
-                        .collect(Collectors.toList());
-
-                return inputList.stream()
                         .map(input -> String.format("%s %d", input.getInputString(), input.getWordCount()))
                         .collect(Collectors.joining(NEW_LINE));
 
